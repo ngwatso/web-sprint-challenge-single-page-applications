@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import * as yup from "yup";
+import axios from "axios";
 
 export default function Form() {
 	// TODO Set up state
@@ -76,7 +78,7 @@ export default function Form() {
 	const formSubmit = (e) => {
 		e.preventDefault();
 
-		axioa.post("https://reqres.in/api/users", formState)
+		axios.post("https://reqres.in/api/users", formState)
 			.then((res) => {
 				console.log("RESPONSE", res);
 				setPost(res.data);
