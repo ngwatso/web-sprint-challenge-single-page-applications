@@ -10,7 +10,19 @@ export default function Form(props) {
 		name: "",
 		size: "",
 		sauce: "",
-		toppings: [],
+		// toppings: [],
+		pepperoni: false,
+		spicyPepperoni: false,
+		italianSausage: false,
+		bacon: false,
+		ham: false,
+		hamburger: false,
+		mushrooms: false,
+		onions: false,
+		greenPepper: false,
+		pineapple: false,
+		blackOlives: false,
+		greenOlives: false,
 		glutenFreeCrust: false,
 		specialInstructions: "",
 		quantity: "",
@@ -66,56 +78,6 @@ export default function Form(props) {
 			});
 	};
 
-	// const toppingsArr = () => {
-	// 	if (pepperoni === true) {
-	// 		toppings.push("Pepperoni");
-	// 	}
-
-	// 	if (spicyPepperoni === true) {
-	// 		toppings.push("Spicy Pepperoni");
-	// 	}
-
-	// 	if (italianSausage === true) {
-	// 		toppings.push("Italian Sausage");
-	// 	}
-
-	// 	if (bacon === true) {
-	// 		toppings.push("Bacon");
-	// 	}
-
-	// 	if (ham === true) {
-	// 		toppings.push("Ham");
-	// 	}
-
-	// 	if (hamburger === true) {
-	// 		toppings.push("Hamburger");
-	// 	}
-
-	// 	if (mushrooms === true) {
-	// 		toppings.push("Mushrooms");
-	// 	}
-
-	// 	if (onions === true) {
-	// 		toppings.push("Onions");
-	// 	}
-
-	// 	if (greenPepper === true) {
-	// 		toppings.push("Green Pepper");
-	// 	}
-
-	// 	if (pineapple === true) {
-	// 		toppings.push("Pineapple");
-	// 	}
-
-	// 	if (blackOlives === true) {
-	// 		toppings.push("Black Olives");
-	// 	}
-
-	// 	if (greenOlives === true) {
-	// 		toppings.push("Green Olives");
-	// 	}
-	// };
-
 	// TODO onSubmit function
 
 	const handleChange = (e) => {
@@ -132,7 +94,22 @@ export default function Form(props) {
 		validateChange(e);
 		setFormState(newFormState);
 	};
+	const toppings = [
+		"pepperoni",
+		"spicyPepperoni",
+		"italianSausage",
+		"bacon",
+		"ham",
+		"hamburger",
+		"mushrooms",
+		"onions",
+		"greenPepper",
+		"pineapple",
+		"blackOlives",
+		"greenOlives",
+	];
 
+	console.log("Toppings", toppings);
 	const formSubmit = (e) => {
 		e.preventDefault();
 		props.newPizzaOrder(formState);
@@ -140,12 +117,66 @@ export default function Form(props) {
 			name: "",
 			size: "",
 			sauce: "",
-			toppings: [],
+			toppings: toppings.map((item) => {
+				return formState.item === true ? item : null;
+			}),
+
+			// Toppings() {
+			// 	const toppings = [];
+
+			// 	if (formState.pepperoni === true) {
+			// 		toppings.push("Pepperoni");
+			// 	}
+
+			// 	if (formState.spicyPepperoni === true) {
+			// 		toppings.push("Spicy Pepperoni");
+			// 	}
+
+			// 	if (formState.italianSausage === true) {
+			// 		toppings.push("Italian Sausage");
+			// 	}
+
+			// 	if (formState.bacon === true) {
+			// 		toppings.push("Bacon");
+			// 	}
+
+			// 	if (formState.ham === true) {
+			// 		toppings.push("Ham");
+			// 	}
+
+			// 	if (formState.hamburger === true) {
+			// 		toppings.push("Hamburger");
+			// 	}
+
+			// 	if (formState.mushrooms === true) {
+			// 		toppings.push("Mushrooms");
+			// 	}
+
+			// 	if (formState.onions === true) {
+			// 		toppings.push("Onions");
+			// 	}
+
+			// 	if (formState.greenPepper === true) {
+			// 		toppings.push("Green Pepper");
+			// 	}
+
+			// 	if (formState.pineapple === true) {
+			// 		toppings.push("Pineapple");
+			// 	}
+
+			// 	if (formState.blackOlives === true) {
+			// 		toppings.push("Black Olives");
+			// 	}
+
+			// 	if (formState.greenOlives === true) {
+			// 		toppings.push("Green Olives");
+			// 	}
+			// },
 			glutenFreeCrust: "",
 			specialInstructions: "",
 			quantity: "",
 		});
-
+		console.log("THIS", formState.pepperoni);
 		axios.post("https://reqres.in/api/users", formState)
 			.then((res) => {
 				console.log("RESPONSE", res);

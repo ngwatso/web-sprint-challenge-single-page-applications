@@ -13,9 +13,11 @@ const Home = (props) => {
 	return (
 		<div className="home-wrapper">
 			<img className="pizza" src={pizza} alt="pizza" />
+			<div className="button-container">
 			<button className="goToForm" onClick={routeToForm}>
 				Pizza?
 			</button>
+			</div>
 		</div>
 	);
 };

@@ -22,6 +22,21 @@ const Confirm = (props) => {
 	// 			console.log("ERROR, SOMETHING WENT WRONG", err);
 	// 		});
 	// }, []);
+	const toppings = [
+		"Pepperoni",
+		"Spicy Pepperoni",
+		"Italian Sausage",
+		"Bacon",
+		"Ham",
+		"Hamburger",
+		"Mushrooms",
+		"Onions",
+		"Green Pepper",
+		"Pineapple",
+		"Black Olives",
+		"Green Olives",
+	];
+	console.log(toppings);
 
 	return (
 		<div className="order-wrapper">
@@ -30,7 +45,14 @@ const Confirm = (props) => {
 				<h3>Qty: {newOrder.quantity}</h3>
 				<h3>Size: {newOrder.size}</h3>
 				<h3>Sauce: {newOrder.sauce}</h3>
-				<h3>Toppings: {newOrder.toppings}</h3>
+				{/* <h3>Toppings: {newOrder.toppings}</h3> */}
+				<h3>Toppings: </h3>
+				<ul>
+					{toppings.map((value, index) => {
+						return <li key={index}>{value}</li>;
+					})}
+				</ul>
+
 				<h3>
 					Special Instructions: {newOrder.specialInstructions}
 				</h3>

@@ -32,6 +32,11 @@ describe("Select multiple toppings", () => {
 
 describe("Check if submit button works", () => {
 	it("checks submit button functionality", () => {
-		cy.get("#size").select[1].should("have.value", "Small");
+		cy.get("#size").select("Small").should("have.value", "Small");
+		cy.get("#sauce")
+			.select("Original Red")
+			.should("have.value", "Original Red");
+		cy.get("#quantity").select("1").should("have.value", "1");
+		cy.get("#submit").click().should("not.be.disabled");
 	});
 });
