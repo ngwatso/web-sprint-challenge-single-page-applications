@@ -1,13 +1,148 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+a {
+	text-decoration: none;
+	letter-spacing: 3px;
+	margin: 0 10px;
+}
+
+img {
+	width: 100%;
+}
+
+button {
+	width: 7rem;
+	height: 3rem;
+	border-radius: 0.5rem;
+	background-color: teal;
+	margin-top: 15px;
+	font-size: 1.5rem;
+}
+
+.home-wrapper {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	flex-flow: column;
+	width: 90%;
+	max-width: 450px;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+
+label {
+	display: flex;
+	flex-flow: column;
+	align-items: flex-start;
+	margin: 10px 0;
+	font-size: 1rem;
+}
+
+.error {
+	font-size: 0.75rem;
+	color: red;
+}
+
+input,
+select,
+textarea {
+	width: 95%;
+	display: block;
+	border: 2px solid black;
+	margin: 5px 0 0;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #dcc5b1;
+}
+
+select {
+	width: 100%;
+}
+
+.qty {
+	width: 15%;
+}
+
+.crust-wrapper > label {
+	border-top: 3px solid teal;
+	width: 100%;
+	padding-top: 10px;
+	display: flex;
+	flex-flow: row-reverse;
+	justify-content: flex-end;
+	/* border: 1px solid red; */
+}
+
+.crust-l {
+	width: 85%;
+}
+
+.crust-c {
+	width: 7%;
+}
+
+.toppings {
+	width: 150%;
+	max-width: 500px;
+	height: 250px;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: flex-start;
+	/* border: 1px solid blue; */
+}
+
+.toppings label {
+	display: flex;
+	flex-flow: row-reverse;
+	justify-content: flex-end;
+	width: 45%;
+	/* border: 1px solid black; */
+}
+
+.toppings input {
+	width: 15%;
+	/* border: 1px solid red; */
+	margin-left: 0;
+}
+
+.submit {
+	width: 100%;
+}
+
+.top-label {
+	border-bottom: 3px solid teal;
+	padding-bottom: 3px;
+}
+
+.order-wrapper {
+	display: flex;
+	flex-flow: column;
+	width: 90%;
+	max-width: 450px;
+	justify-content: space-between;
+	margin: 0 auto;
+	/* border: 1px solid gray; */
 }
